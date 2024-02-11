@@ -1,4 +1,7 @@
-did not put zoo module name before the function name
+1. Did not put zoo module name before the function name
 
+2. Used a variable that was not defined in the method: animal_type
 
+3. Formatted the string getter wrongly to give the smoking smoking_status
 
+4. (Not a bug) Did not mangle the datafields
