@@ -6,7 +6,7 @@ connection = sql.connect("books.db ")
 
 cursor = connection.cursor()
 
-print(Fore.RED + "\n!!! IF YOU GET AN ERROR AFTER THIS MESSAGE, PLEASE DELETE THE FILE 'books.db !!!!!!" + Fore.RESET)
+print(Fore.RED + "\n!!! IF YOU GET AN ERROR AFTER THIS MESSAGE, PLEASE DELETE THE FILE 'books.db !!!!!!")
 
 createtable = "CREATE TABLE books (title TEXT, author TEXT, year INTEGER)"
 
@@ -21,13 +21,17 @@ insert5 = "INSERT INTO books (title, author, year) values ('Small Gods','Terry P
 cursor.execute(insert1)
 cursor.execute(insert2)
 cursor.execute(insert3)
-#cursor.execute(insert4) #This will cause an error because the table is not yet
+cursor.execute(insert4)
+cursor.execute(insert5)
 
+print(Fore.GREEN + "\nData inserted successfully!")
 
 cursor.execute("SELECT title FROM books ORDER BY title")
 
 output = cursor.fetchall()
 
-print("\nBOOKS BY ALPHABETICAL ORDER\n")
+print(Fore.YELLOW + "\nBOOKS BY ALPHABETICAL ORDER\n" + Fore.RESET)
 for title in output:
     print(title[0])
+
+print('\n')
